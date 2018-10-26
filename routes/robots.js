@@ -1,11 +1,14 @@
-const express = require('express');
-const api = express.Router();
+
 const robotsCtrl = require('../controllers/robots');
 
-api.get('/robots', robotsCtrl.index);
+module.exports = (app) => {
+
+    app.get('/api/robots', robotsCtrl.index);
+    app.post('/api/robots', robotsCtrl.store);
+    app.put('/api/robots/:id', robotsCtrl.update);
+    app.delete('/api/robots/:id', robotsCtrl.destroy);
+
+}
 
 
-api.post('/robots', robotsCtrl.store);
 
-
-module.exports = api;

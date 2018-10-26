@@ -25,16 +25,21 @@ const RobotSchema = new Schema({
             enum: ['GESTURES', 'HUMOR', 'WORK', 'MATHS']
         }],
         isAvailable: {
-            type: boolean,
+            type: Boolean,
             default: false
-        }
+        },
+        components: [{
+            type: Schema.Types.ObjectId,
+            ref: 'Component'
+        }]
+
     },
 
     {
         timestamps: true
     }
-    
-    );
+
+);
 
 module.exports = mongoose.model('Robot', RobotSchema);
 // const Robot = mongoose.model('robot', RobotSchema);

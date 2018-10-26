@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 
 
 // Conexion a la base de datos
-mongoose.connection.openUri('mongodb://localhost:27017/hospitalDB', {
+mongoose.connection.openUri('mongodb://localhost:27017/hospital', {
     useNewUrlParser: true
 }, (err, rep) => {
     if (err) throw err;
